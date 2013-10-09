@@ -1,0 +1,188 @@
+@import "reset";
+@import "base-class";
+
+/* Typography  */
+
+body {
+  @extend %black;
+  @extend %sans;
+  font-size: 100%;
+  line-height: 1.75;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  @extend %black;
+  @include single-transition(0.3s ease-in all);
+  text-decoration: none;
+
+  &:hover {
+    @extend %blue;
+  }
+}
+
+pre,
+code {
+  background: #f4f4f4;
+  font-size: 85%;
+}
+
+pre {
+  font-size: 85%;
+  padding: 1em;
+  background: #f4f4f4;
+  margin-bottom: 1.2em;
+  line-height: 1.5;
+  overflow: auto;
+  white-space: pre;
+}
+
+code {
+  @extend %blue;
+  padding: 0.2em 0.4em;
+}
+
+.post h2,
+.post h3 {
+  margin-top: 2em;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1.3em;
+  line-height: 1.5;
+  margin-bottom: 0.75em;
+}
+
+ul, ol {
+  margin-bottom: 1.5em;
+  // margin-left: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+}
+
+blockquote {
+  @extend %italic;
+  @extend %serif;
+  font-size: 1.2em;
+  padding: 2em;
+
+  cite,
+  small {
+    @extend %sans;
+    font-style: normal;
+    font-size: 0.85em;
+  }
+}
+
+/* Layout Skeleton */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0 8%;
+}
+
+.bg-column {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #f9f9f9;
+  width: 35%;
+}
+
+.container {
+  position: relative;
+  padding: 5em 0;
+  
+  &:before {
+    content: "";
+    display: table; }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    float: left;
+  }
+}
+
+.site-meta {
+  padding-right: 5em;
+  width: 32.1%;
+}
+
+.site-title {
+  margin-bottom: 0;
+  text-transform: uppercase;
+
+  a {
+    @extend %blue;
+  }
+}
+
+.navbar {
+  margin-bottom: 3em;
+
+  a {
+    @extend %blue;
+    display: block;
+  }
+}
+
+.content {
+  padding-left: 5em;
+  width: 67.9%;
+}
+
+article {
+  margin-bottom: 2em;
+
+  h3 {
+    margin-bottom: 0
+  }
+}
+
+.prev,
+.next {
+  display: inline-block;
+  line-height: 1;
+}
+
+.prev {
+  padding-right: 23px;
+  margin-right: 20px;
+  border-right: 1px solid #4a4a4a;
+}
+
+.post {
+  margin-bottom: 3em;
+
+  a {
+    font-weight: bold;
+    border-bottom: 1px solid #3aaacf
+  }
+}

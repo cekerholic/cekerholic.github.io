@@ -1,0 +1,13 @@
+!!!
+%html
+  = partial("structure/shared-header")
+  \
+  %body
+    .bg-column
+    \
+    .container
+      .site-meta= partial("structure/header")
+      .content= yield
+    \
+    \
+    = partial("structure/footer")

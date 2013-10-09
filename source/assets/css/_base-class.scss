@@ -1,0 +1,54 @@
+@import "compass";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities";
+
+// Typography
+%sans {
+  font-family: 'Cabin', Sans-serif;
+}
+
+%serif {
+  font-family: Serif;
+}
+
+%bold {
+  font-weight: bold;
+}
+
+%italic {
+  font-style: italic;
+}
+
+
+
+// Color
+%blue {
+  color: #3aaacf;
+}
+
+%black {
+  color: #4a4a4a;
+}
+
+
+// Layout
+%clearfix {
+  
+  &:before {
+    content: "";
+    display: table; }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%left {
+  float: left;
+}
+
+%right {
+  float: right;
+}

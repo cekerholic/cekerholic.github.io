@@ -1,17 +1,19 @@
 ---
 title: Home
 pageable: true
-per_page: 5
+per_page: 1
+layout: index_layout
 ---
 
 - page_articles.each_with_index do |article|
   %article 
-    %time= article.date.strftime('%e %B %Y')
     %h3= link_to article.title, article
+    %time= article.date.strftime('%e %B %Y')
+    .entry-content= article.body
 
-.clearfix
-- if paginate
-  - if prev_page
-    %p.prev= link_to '&laquo; Halaman sebelumnya', prev_page
-  - if next_page
-    %p.next= link_to 'Halaman selanjutnya &raquo;', next_page
+.pagenavi
+  - if paginate
+    - if prev_page
+      %p.pagination.prev= link_to '&larr; Halaman sebelumnya', prev_page
+    - if next_page
+      %p.pagination.next= link_to 'Halaman selanjutnya &rarr;', next_page

@@ -1,2 +1,18 @@
+%p.colophon
+  &copy; 2013 Aris FM. Proudly powered by 
+  = link_to 'Middleman', 'http://middlemanapp.com/'
+  &amp;
+  = link_to 'Github', 'https://github.com/'
+
 %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
-= javascript_include_tag 'typeahead'
+%script 
+:javascript
+  $(function(){
+    $('.navbar a').each(function(){
+      var href = $(this).attr('href');
+      var bodyClass = href.substring(1);
+      if( $('body').hasClass(bodyClass) ) {
+        $(this).addClass('active');
+      }
+    });
+  });

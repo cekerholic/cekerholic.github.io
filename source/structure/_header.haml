@@ -3,18 +3,10 @@
     %a.home-link{:href => "/", :rel => "home", :title => "Cekerholic"} Jurnal Aris FM
   %p Catatan seorang Front-end Developer
 
-/
-  %form
-    %input.search-term{:placeholder => "example: lorem ipsem", :required => "required", :type => "search"}/
-    %input.search-submit{:type => "submit", :value => "Go"}/
-  .search-results
-
-%nav.navbar 
-  = link_to 'Tentang', '/about'
-  = link_to 'Arsip', '/arsip.html'
-
-
 %a.twitter-follow-button{"data-show-count" => "true", href: "https://twitter.com/Aris_FM"} Follow @Aris_FM
 :javascript
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
+%nav.navbar 
+  = link_to 'Tentang', '/about'
+  = link_to 'Arsip', '/arsip'

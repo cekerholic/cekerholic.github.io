@@ -4,7 +4,7 @@
   $ = jQuery;
 
   $(function() {
-    return $('.search-submit').on('click', function(e) {
+    return $('.search-term').on('keypress', function(e) {
       var search_term;
       e.preventDefault();
       search_term = $('.search-term').val().toLowerCase();

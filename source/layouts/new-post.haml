@@ -15,8 +15,7 @@
           %h1.post-title= data.page.title
           %time= current_article.date.strftime('%e %B %Y')
           = yield
-        %aside#comments 
-          = partial("structure/disqus.erb")
+        = partial("structure/disqus.erb")
         .navigation
           %p 
             - prev_article = current_article.previous_article

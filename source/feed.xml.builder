@@ -1,10 +1,10 @@
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
-  xml.title "Blog Name"
-  xml.subtitle "Blog subtitle"
-  xml.id "http://blog.url.com/"
-  xml.link "href" => "http://blog.url.com/"
-  xml.link "href" => "http://blog.url.com/feed.xml", "rel" => "self"
+  xml.title "Jurnal Aris FM"
+  xml.subtitle "Catatan seorang Front-end Developer"
+  xml.id "http://cekerholic.com/"
+  xml.link "href" => "http://cekerholic.com/"
+  xml.link "href" => "http://cekerholic.com/feed", "rel" => "self"
   xml.updated blog.articles.first.date.to_time.iso8601
   xml.author { xml.name "Blog Author" }
 
@@ -15,9 +15,8 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.id article.url
       xml.published article.date.to_time.iso8601
       xml.updated article.date.to_time.iso8601
-      xml.author { xml.name "Article Author" }
-      # xml.summary article.summary, "type" => "html"
-      xml.content article.summary(250, '...'), "type" => "html"
+      xml.author { xml.name "Aris FM" }
+      xml.summary article.body, "type" => "html"
     end
   end
 end

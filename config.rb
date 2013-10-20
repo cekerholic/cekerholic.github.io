@@ -102,6 +102,7 @@ configure :build do
   
   # Or use a different image path
   # set :http_path, "/Content/images/"
+  activate :gzip
 end
 
 activate :deploy do |deploy|
@@ -109,5 +110,4 @@ activate :deploy do |deploy|
   # Optional Settings
   # deploy.remote = "custom-remote" # remote name or git url, default: origin
   deploy.branch = "master" # default: gh-pages
-  deploy.build_before = true # default: false
 end

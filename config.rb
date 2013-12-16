@@ -8,7 +8,7 @@ activate :blog do |blog|
   # blog.prefix = "blog"
   blog.permalink = "archives/:year/:month/:title"
   blog.sources = "posts/:year-:month-:day-:title"
-  blog.taglink = "tag/:tag"
+  blog.taglink = "tag/:tag.html"
   blog.layout = "post"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
@@ -107,6 +107,7 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :git
+  deploy.build_before = true
   # Optional Settings
   # deploy.remote = "custom-remote" # remote name or git url, default: origin
   deploy.branch = "master" # default: gh-pages

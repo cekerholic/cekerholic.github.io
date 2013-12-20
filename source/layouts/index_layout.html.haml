@@ -5,11 +5,8 @@
   %title Jurnal Aris FM
   \
   %body
-    .bg-column
     \
+    = partial("structure/header")
     .container
-      .site-meta= partial("structure/header")
       .content= yield
-    \
-    \
-    = partial("structure/footer")
+      = partial("structure/footer")

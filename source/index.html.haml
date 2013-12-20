@@ -7,11 +7,13 @@ layout: index_layout
 
 - page_articles.each_with_index do |article|
   %article 
-    %h3.post-title= link_to article.title, article
-    %time= article.date.strftime('%e %B %Y')
+    %h2.post-title= link_to article.title, article
+    %p.post-meta
+      %time{datetime: article.date.strftime('%Y-%m-%d')}= article.date.strftime('%e %B %Y')
+      %a{href: article.url+"#disqus_thread"} Comments
     .entry-content= article.body
 
-.pagenavi
+.site-pagination
   - if paginate
     - if prev_page
       %p.pagination.prev= link_to '&larr; Halaman sebelumnya', prev_page

@@ -1,12 +1,8 @@
 %header#masthead.site-header{:role => "banner"}
   %h1.site-title
     %a.home-link{:href => "/", :rel => "home", :title => "Cekerholic"} Jurnal Aris FM
-  %p Catatan seorang Front-end Developer
+  %p.site-description Catatan seorang Front-end Developer
+  %nav.site-navigation
+    = link_to 'Tentang', '/about'
+    = link_to 'Arsip', '/arsip'
 
-%a.twitter-follow-button{"data-show-count" => "true", href: "https://twitter.com/Aris_FM"} Follow @Aris_FM
-:javascript
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-
-%nav.navbar 
-  = link_to 'Tentang', '/about'
-  = link_to 'Arsip', '/arsip'

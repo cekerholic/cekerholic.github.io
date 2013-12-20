@@ -5,7 +5,6 @@ tags:
 ---
 
 > Action may not always bring happiness; but there is no happiness without action.
-
 <cite>Benjamin Disraeli</cite>
 
 *Quote* yang #makjleb banget bagi saya yang agak sedikit *nglokro* belakangan ini. Emang bener juga sih kalau dipikir-pikir, kebahagiaan gak bisa datang gitu aja kalo kita cuma berdiam diri.

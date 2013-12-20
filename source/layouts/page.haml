@@ -2,18 +2,16 @@
 %html
   = partial("structure/shared-header")
   \
-  %title= data.page.title + " | Jurnal Aris FM"
+  %title= current_page.data.title + " | Jurnal Aris FM"
   \
   \
   %body{ :class => page_classes }
-    .bg-column
 
+    = partial("structure/header")
     .container
-      .site-meta= partial("structure/header")
       .content
         %article.post
-          %h1= data.page.title
-          = yield
-
-
-    = partial("structure/footer")
+          %h2.post-title= current_page.data.title
+          .entry-content= yield
+     
+      = partial("structure/footer")

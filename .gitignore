@@ -12,8 +12,8 @@
 
 # Ignore Sass' cache
 /.sass-cache
-/myblog.sublime-project
-/myblog.sublime-workspace
+/*.sublime-project
+/*.sublime-workspace
 
 # Ignore .DS_store file
 .DS_Store

@@ -2,33 +2,32 @@
 %html
   = partial("structure/shared-header")
   \
-  %title= data.page.title + " | Jurnal Aris FM"
+  %title= current_article.title + " | Jurnal Aris FM"
   \
   \
   %body
-    .bg-column
-
+    = partial("structure/header")
     .container
-      .site-meta= partial("structure/header")
       .content
         %article.post 
-          %h1.post-title= data.page.title
-          %time= current_article.date.strftime('%e %B %Y')
-          = yield
+          %h2.post-title= current_article.title
+          %p.post-meta
+            %time{datetime: current_article.date.strftime('%Y-%m-%d')}= current_article.date.strftime('%e %B %Y')
+            %a{href: current_article.url+"#disqus_thread"} Comments
+          .entry-content= yield
         %aside#comments 
           = partial("structure/disqus.erb")
         .navigation
-          %p 
-            - prev_article = current_article.previous_article
-            - if prev_article
+          - prev_article = current_article.previous_article
+          - if prev_article
+            %p 
               %span Tulisan sebelumnya:
               %a{ :rel => "prev", :href => prev_article.url }= prev_article.title
-          %p 
-            - next_article = current_article.next_article
-            - if next_article
+          - next_article = current_article.next_article
+          - if next_article
+            %p 
               %span Tulisan selanjutnya:
               %a{ :rel => "next", :href => next_article.url }= next_article.title
 
-
-    = partial("structure/footer")
+      = partial("structure/footer")
 

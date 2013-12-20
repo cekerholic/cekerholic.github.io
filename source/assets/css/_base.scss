@@ -1,0 +1,32 @@
+// Summon The Mighty Compass
+@import "compass";
+
+
+// Typography
+%sans         { font-family: "Source Sans Pro", sans-serif; }
+%serif        { font-family: "PT Serif", Georgia, serif; }
+@mixin sans   { @extend %sans; }
+@mixin serif  { @extend %serif; }
+
+
+// Color
+$blue:  #3aaacf;
+$black: #4a4a4a; // Fake black :P. You should never use pure black http://ianstormtaylor.com/design-tip-never-use-black/
+$grey:  #aaa;
+$w:     #fff;
+$b:     #000; // Now this is pure black, used for RGBA only though
+
+%black        { color: $black; }
+%blue         { color: $blue; }
+@mixin black  { @extend %black; }
+@mixin blue   { @extend %blue; }
+
+
+// Function: Convert pixels to EM
+@function pem($pixels) {
+  @return #{$pixels/16.0}em
+}
+
+@mixin respond($query-width) {
+  @media (min-width: $query-width) { @content; }
+}

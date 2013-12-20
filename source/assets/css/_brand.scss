@@ -1,0 +1,59 @@
+.site-header {
+  @include sans;
+  background: $black image-url("bg-mobile.jpg") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  padding-top: pem(30);
+  color: $w;
+
+  @include respond( pem(768) ) {
+    background-image: image-url("bg-desktop.jpg");
+    padding-top: pem(100);
+  }
+
+  a {
+    color: $w;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.site-navigation {
+  background: rgba($b, .3);
+  margin-top: pem(30);
+
+  @include respond( pem(768) ) {
+    margin-top: pem(100);
+  }
+
+  a {
+    display: inline-block;
+    margin: 0 pem(10);
+    padding: 0 pem(10);
+    line-height: 3;
+    font-size: pem(13);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.site-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  text-shadow: 0 1px 2px rgba($b, .5);
+  letter-spacing: 1px;
+}
+
+.site-description {
+  margin-bottom: 0;
+  font-weight: 400;
+
+  @include respond( pem(768) ) {
+    font-size: pem(20);
+    margin-top: 0.5em;
+  }
+}

@@ -1,0 +1,56 @@
+.pagination {
+  @include sans;
+  font-weight: 700;
+  display: inline-block;
+
+  a {
+    -webkit-border-radius: pem(25);
+    -moz-border-radius: pem(25);
+    border-radius: pem(25);
+    display: block;
+    height: pem(50);
+    line-height: pem(44);
+    padding: 0 pem(15);
+    border: 3px solid $grey;
+    background-color: #f8f5f0;
+
+    &:hover {
+      border-color: $blue;
+      background-color: $w;
+    }
+  }
+
+  &.next {
+
+    @include respond( pem(481) ) {
+      margin-left: 0.5em
+    }
+  }
+}
+
+.navigation {
+  border-top: 1px solid rgba(0,39,59,.08);
+  margin-top: pem(50);
+  padding-top: pem(50);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+  span {
+    color: $grey;
+  }
+  a {
+    @include sans;
+    font-size: pem(20);
+    font-weight: 700;
+    display: block;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include respond( pem(768) ) {
+      font-size: pem(24)
+    }
+  }
+}

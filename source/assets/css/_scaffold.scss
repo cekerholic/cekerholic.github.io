@@ -1,0 +1,64 @@
+@include establish-baseline($base-font-size);
+
+// Prevent FOUT
+.wf-loading {
+  
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+}
+
+body {
+  @extend %black;
+  @extend %serif;
+  font-size: 100%;
+}
+
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+%clearfix {
+  
+  &:before {
+    content: "";
+    display: table; }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
+  padding: 0 1em;
+  position: relative;
+
+  @include respond( pem(768) ) {
+    width: pem(720);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.colophon {
+  @include sans;
+  font-size: pem(14);
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  color: $grey;
+
+  a {
+    color: $blue;
+  }
+}

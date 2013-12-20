@@ -1,0 +1,126 @@
+// Paragraph
+p {
+  margin-bottom: 1em;
+}
+
+
+// Link
+a {
+  @extend %black;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+  text-decoration: none;
+
+  &:hover {
+    @extend %blue;
+  }
+}
+
+
+// Headings
+#{headings(all)} {
+  @include sans;
+}
+
+h1 {
+  font-size: pem(30);
+  margin-bottom: 0.5em;
+  line-height: 1;
+
+  @include respond( pem(481) ) {
+    font-size: pem(48);
+  }
+}
+
+h2 {
+  font-size: pem(24);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+
+  @include respond( pem(481) ) {
+    font-size: pem(30);
+    line-height: 1;
+  }
+}
+
+h3 {
+  font-size: pem(20);
+  line-height: 1.5;
+  margin-bottom: 0.75em;
+
+  @include respond( pem(481) ) {
+    font-size: pem(24)
+  }
+}
+
+// Code
+pre {
+  background: #f4f4f4;
+  font-size: 85%;
+  padding: 1em;
+  margin-bottom: 1.2em;
+  line-height: 1.5;
+  overflow: auto;
+  white-space: pre;
+}
+
+code {
+  border-radius: 2px;
+  padding: 0.1em 0.4em;
+  border: 1px solid #ece6da;
+  background: #f8f5f0;
+  margin: 0 3px;
+  font-size: 85%;
+}
+
+
+// Lists
+ul, ol {
+  margin-bottom: 1.5em;
+  margin-left: 2.5em;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+.archive-list li {
+  margin-bottom: 0;
+
+  small {
+    &:before {
+      content: '\2014';
+      padding-right: 3px;
+    }
+  }
+}
+
+
+// Blockquote
+blockquote {
+  border-left: 2px solid $blue;
+  font-style: italic;
+  padding-left: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+
+  cite,
+  small {
+    @extend %sans;
+    font-style: normal;
+    font-size: 0.85em;
+
+    &:before {
+      content: '\2014';
+      padding-right: 3px;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

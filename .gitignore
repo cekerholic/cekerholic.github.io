@@ -10,7 +10,8 @@
 # Ignore the build directory
 /build
 
-# Ignore Sass' cache
+# Ignore cache
+/.cache
 /.sass-cache
 /*.sublime-project
 /*.sublime-workspace

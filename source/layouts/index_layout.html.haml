@@ -7,6 +7,6 @@
   %body
     \
     = partial("structure/header")
+    .content.home= yield
     .container
-      .content= yield
       = partial("structure/footer")

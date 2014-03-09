@@ -1,6 +1,6 @@
 .site-header {
   @include sans;
-  background: $black image-url("bg-mobile.jpg") no-repeat center;
+  background: $black image-url("bg-mobile3.jpg") no-repeat center;
   -webkit-background-size: cover;
   background-size: cover;
   text-align: center;
@@ -8,8 +8,8 @@
   color: $w;
 
   @include respond( pem(768) ) {
-    background-image: image-url("bg-desktop.jpg");
-    padding-top: pem(100);
+    background-image: image-url("bg-desktop3.jpg");
+    padding-top: pem(150);
   }
 
   a {
@@ -26,7 +26,7 @@
   margin-top: pem(30);
 
   @include respond( pem(768) ) {
-    margin-top: pem(100);
+    margin-top: pem(150);
   }
 
   a {

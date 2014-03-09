@@ -9,7 +9,7 @@ activate :blog do |blog|
   blog.sources = "posts/:year-:month-:day-:title"
   blog.taglink = "tag/:tag.html"
   blog.layout = "post"
-  blog.default_extension = ".haml"
+  blog.default_extension = ".md.erb"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
   blog.paginate = true

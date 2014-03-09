@@ -1,6 +1,20 @@
 .content {
   padding-top: pem(50);
   padding-bottom: pem(50);
+
+  &.home {
+    padding: 0;
+  }
+
+  article {
+    margin-bottom: 0;
+    padding-top: pem(50);
+    padding-bottom: pem(50);
+
+    &:nth-child(2n) {
+      background-color: #f8f5f0
+    }
+  }
 }
 
 article {
@@ -38,6 +52,10 @@ article {
     line-height: 1.6;
   }
   
+  h3 {
+    margin-top: pem(30);
+  }
+
   a {
     color: $blue;
 
@@ -55,6 +73,9 @@ article {
   
   @include respond( pem(350) ) {
     max-width: 45%;
+  }
+  @include respond( pem(700) ) {
+    max-width: 48%;
   }
 }
 

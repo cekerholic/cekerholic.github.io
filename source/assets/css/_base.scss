@@ -30,3 +30,15 @@ $b:     #000; // Now this is pure black, used for RGBA only though
 @mixin respond($query-width) {
   @media (min-width: $query-width) { @content; }
 }
+
+.clearfix {
+  &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

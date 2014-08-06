@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible">
+
+<script src="../../../assets/js/webfont.js" type="text/javascript"></script>
+
+<link href="../../../assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="../../../assets/images/favicon.ico" rel="icon" type="image/ico" />
+</head>
+
+
+<title>Membuat Sosial Media Sharing Button dengan Efek Rollover | Jurnal Aris FM</title>
+
+
+<body>
+<header class="site-header" id="masthead" role="banner">
+<h1 class="site-title">
+<a class="home-link" href="/" rel="home" title="Cekerholic">Jurnal Aris FM</a>
+</h1>
+<p class="site-description">Catatan seorang Front-end Developer</p>
+<nav class="site-navigation">
+<a href="/about">Tentang</a>
+<a href="/arsip">Arsip</a>
+</nav>
+</header>
+
+<div class="container">
+<div class="content">
+<article class="post">
+<h2 class="post-title">Membuat Sosial Media Sharing Button dengan Efek Rollover</h2>
+<p class="post-meta">
+<time datetime="2010-11-02"> 2 November 2010</time>
+<a href="/archives/2010/11/membuat-sosial-media-sharing-button-dengan-efek-rollover.html#disqus_thread">Comments</a>
+</p>
+<div class="entry-content"><p>Kemarin saya menulis tentang <a href="http://cekerholic.com/archives/2010/10/mengenal-css-sprites.html">CSS Sprites dan contoh penggunaannya</a>. Nah kali ini saya akan mengajak anda untuk membuat sebuah Sosial Media Sharing Button/Menu dengan menggunakan teknik CSS Sprites.</p>
+
+<h3 id="preview">Preview</h3>
+
+<p>Inilah hasil akhir dari tutorial ini, klik gambar untuk melihat <a href="http://cekerholic.com/demo/share-button/">live-demo</a></p>
+
+<p><a href="http://cekerholic.com/demo/share-button/"><img src="http://i2.wp.com/cekerholic.com/wp-content/uploads/2010/10/share-final.jpg?fit=451%2C161" alt="Share Button Final" class="aligncenter size-full wp-image-473" data-recalc-dims="1" /></a></p>
+
+<!--more-->
+
+<h3 id="langkah-1-8211-persiapan">Langkah 1 – Persiapan</h3>
+
+<p>Sebelum memulai sebaiknya anda berdoa dulu *ini tidak wajib <img src="http://i1.wp.com/cekerholic.com/wp-includes/images/smilies/icon_biggrin.gif?w=604" alt=":D" class="wp-smiley" data-recalc-dims="1" /> *. Pertama, download dulu <a href="http://d2dnrmagaqciul.cloudfront.net/downloads/social_networking_iconpack.zip">paket ikon sosial media</a> dari situs <a href="http://www.komodomedia.com/">Komodo Media</a>. Kemudian bukalah Photoshop, dan buatlah layer baru dengan ukuran 187px X 64px.</p>
+
+<p><img src="http://i2.wp.com/cekerholic.com/wp-content/uploads/2010/10/1.jpg?fit=582%2C377" alt="New Document" class="aligncenter size-full wp-image-467" data-recalc-dims="1" /></p>
+
+<p>Kemudian buatlah guide horizontal pada posisi 32px. Untuk membuat guide klik View &gt; New Guide.</p>
+
+<p><img src="http://i0.wp.com/cekerholic.com/wp-content/uploads/2010/10/2-.jpg?fit=237%2C164" alt="New guide" class="aligncenter size-full wp-image-479" data-recalc-dims="1" /></p>
+
+<p>&lt;img src="http://i0.wp.com/cekerholic.com/wp-content/uploads/2010/10/2.jpg?fit=398%2C154" alt="Guide Horizontal"class="aligncenter size-full wp-image-468" data-recalc-dims="1" /&gt;</p>
+
+<h3 id="langkah-2">Langkah 2</h3>
+
+<p>Ambil 6 buah ikon yang berukuran 32px, yaitu: twitter, facebook, delicious, digg, tumblr dan stumbleupon. Letakkan diatas guide dan beri jarak antar ikon 1px.</p>
+
+<p><img src="http://i2.wp.com/cekerholic.com/wp-content/uploads/2010/10/3.jpg?fit=408%2C168" alt="Icon Position" class="aligncenter size-full wp-image-469" data-recalc-dims="1" /></p>
+
+<h3 id="langkah-3">Langkah 3</h3>
+
+<p>Gabungkan semua layer ikon dengan memilihnya lalu tekan Ctrl+E atau klik Layer &gt; Merge Layers. Setelah itu duplikat layer ikon dengan Ctrl+J atau klik Layer &gt; Duplicate Layer. Geser posisi layer duplikat ke bawah guide.</p>
+
+<p><img src="http://i0.wp.com/cekerholic.com/wp-content/uploads/2010/10/4.jpg?fit=241%2C237" alt="Select Icon Layer" class="aligncenter size-full wp-image-470" data-recalc-dims="1" /></p>
+
+<p><img src="http://i0.wp.com/cekerholic.com/wp-content/uploads/2010/10/5.jpg?fit=444%2C207" alt="Geser layer duplikat" class="aligncenter size-full wp-image-471" data-recalc-dims="1" /></p>
+
+<h3 id="langkah-4">Langkah 4</h3>
+
+<p>Ubah layer ikon duplikat menjadi hitam putih dengan menekan Ctrl+Alt+Shift+B atau klik Image &gt; Adjusments &gt; Black &#038; White. </p>
+
+<p><img src="http://i0.wp.com/cekerholic.com/wp-content/uploads/2010/10/6.jpg?fit=550%2C539" alt="Convert to Black White" class="aligncenter size-full wp-image-472" data-recalc-dims="1" /></p>
+
+<h3 id="langkah-5">Langkah 5</h3>
+
+<p>Simpan dokumen dengan mengklik File &gt; Save for Web &#038; Devices atau tekan Ctrl+Alt+Shift+S. Simpan dengan format PNG transparan dengan nama share_sprite.png.</p>
+
+<p><img src="http://i2.wp.com/cekerholic.com/wp-content/uploads/2010/10/7.jpg?fit=295%2C198" alt="Save for web " class="aligncenter size-full wp-image-466" data-recalc-dims="1" /></p>
+
+<h3 id="langkah-6-8211-membuat-kode-html">Langkah 6 – Membuat Kode HTML</h3>
+
+<p>Sekarang mari kita buat markah HTML-nya dulu, jangan lupa untuk memberi CSS class pada setiap elemen link sosial media.</p>
+
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="line_numbers">
+        <pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre>
+      </td>
+      
+      <td class="code">
+        <pre class="html" style="font-family:monospace;">	&lt;div id="share-button"&gt;
+		&lt;a class="twitshare" href="http://twitter.com/home?status=Currently%20reading http://yourwebsite.com"&gt;&lt;/a&gt;
+		&lt;a class="fbshare" href="http://www.facebook.com/sharer.php?u=http://yourwebsite.com"  title="Share this on Facebook" &gt;&lt;/a&gt;
+		&lt;a class="delishare" href="http://del.icio.us/post?url=http://yourwebsite.com" title="bookmark on delicious"&gt;&lt;/a&gt;
+		&lt;a class="diggshare" href="http://digg.com/submit?url=http://yourwebsite.com" title="Digg it"&gt;&lt;/a&gt;
+		&lt;a class="tumblrshare" href="http://www.tumblr.com/share?v=3&amp;u=http%3A%2F%2Fourwebsite.com%2F" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.tumblr.com']);" title="Post to Tumblr"&gt;&lt;/a&gt;
+		&lt;a class="stumbleshare" href="http://www.stumbleupon.com/submit?url=" title="Stumble This Page" &gt;&lt;/a&gt;
+	&lt;/div&gt;</pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<h3 id="langkah-7-8211-css-sprites-in-action">Langkah 7 – CSS Sprites in Action</h3>
+
+<p>Sekarang saatnya <del>minum</del> bermain CSS Sprites. Sebelum mulai menulis CSS sebaiknya kita memahami dulu markah HTML-nya. Di markah HTML semua link sosial media dikumpulkan dalam sebuah elemen induk <code>&lt;div id="share-button"&gt;</code>, kemudian di setiap link sosial media kita buat class CSS yang berbeda. Nah class-class CSS ini gunanya adalah untuk mengatur posisi gambar dengan menggeser koordinat X dan Y gambar.</p>
+
+<p>Sekarang mari kita mulai menulis kode CSS. Pertama kita atur dulu tampilan elemen induknya, atur lebarnya agar nantinya posisi ikon tidak bergeser, buat juga sebuah garis di bagian bawah.</p>
+
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="line_numbers">
+        <pre>1
+2
+3
+4
+5
+6
+7
+</pre>
+      </td>
+      
+      <td class="code">
+        <pre class="css" style="font-family:monospace;">	<span style="color: #cc00cc;">#share-button</span><span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;"></span> <span style="color: #993333;">auto</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">border-bottom</span><span style="color: #00AA00;">:</span><span style="color: #933;">1px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#adadad</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">padding</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;"></span> <span style="color: #933;">10px</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #933;">222px</span><span style="color: #00AA00;">;</span> 
+	<span style="color: #00AA00;">&#125;</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>Sekarang buat dulu pengaturan global untuk link sosial media :</p>
+
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="line_numbers">
+        <pre>8
+9
+10
+11
+12
+13
+14
+15
+</pre>
+      </td>
+      
+      <td class="code">
+        <pre class="css" style="font-family:monospace;">	<span style="color: #cc00cc;">#share-button</span> a<span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">background-image</span><span style="color: #00AA00;">:</span><span style="color: #993333;">url</span><span style="color: #00AA00;">&#40;</span><span style="color: #ff0000; font-style: italic;">share_sprite.png</span><span style="color: #00AA00;">&#41;</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">float</span><span style="color: #00AA00;">:</span><span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #933;">24px</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span><span style="color: #933;">8px</span> <span style="color: #933;">5px</span> <span style="color: #cc66cc;"></span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">outline</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;"></span> <span style="color: #993333;">none</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #933;">32px</span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>Kode di atas artinya kira-kira seperti ini: gambar master dipanggil agar tampil, tinggi setiap link adalah 24px, jarak antar link adalah 8px dari atas dan 5px dari kanan, lebar setiap link adalah 32px.</p>
+
+<p>Selanjutnya kita buat pengaturan global untuk link sosial media ketika salah satu link di-hover atau ditelusuri dengan tombol tab. Dalam CSS langkah ini disebut membuat pseudo class :hover dan :focus.</p>
+
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="line_numbers">
+        <pre>16
+17
+18
+19
+</pre>
+      </td>
+      
+      <td class="code">
+        <pre class="css" style="font-family:monospace;">	<span style="color: #cc00cc;">#share-button</span> a<span style="color: #3333ff;">:hover</span><span style="color: #00AA00;">,</span><span style="color: #cc00cc;">#share-button</span> a<span style="color: #3333ff;">:focus</span><span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #933;">28px</span><span style="color: #00AA00;">;</span>
+		<span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span><span style="color: #933;">4px</span> <span style="color: #933;">5px</span> <span style="color: #cc66cc;"></span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>Kode di atas artinya adalah : ketika link di-hover atau ditelusuri dengan tombol tab, tinggi link akan berubah menjadi 28px dan jarak link berubah menjadi 4px dari atas.</p>
+
+<p>Cobalah lakukan tes di peramban, hasilnya akan seperti ini:</p>
+
+<p><img src="http://i0.wp.com/cekerholic.com/wp-content/uploads/2010/10/share1.jpg?fit=433%2C171" alt="tampilan pertama gambar" class="aligncenter size-full wp-image-507" data-recalc-dims="1" /></p>
+
+<p>Link tampil dalam bentuk gambar ikon dengan posisi yang sama, ketika di-hover ikon akan sedikit menyembul.</p>
+
+<p>Agar ikon sosial media tampil sesuai dengan link-nya, kita perlu menggeser posisi gambar pada setiap link. Nah inilah yang disebut CSS Sprites. Sekarang buatlah kode CSS berikut:</p>
+
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="line_numbers">
+        <pre>20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre>
+      </td>
+      
+      <td class="code">
+        <pre class="css" style="font-family:monospace;">	.twitshare<span style="color: #00AA00;">&#123;</span>
+	<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;"></span> <span style="color: #933;">32px</span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span>
+	.fbshare<span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">156px</span> <span style="color: #933;">32px</span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span>
+	.delishare<span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">125px</span> <span style="color: #933;">32px</span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span>
+	.diggshare<span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">94px</span> <span style="color: #933;">32px</span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span>
+	.tumblrshare<span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">63px</span> <span style="color: #933;">32px</span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span>
+	.stumbleshare<span style="color: #00AA00;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">32px</span> <span style="color: #933;">32px</span><span style="color: #00AA00;">;</span>
+	<span style="color: #00AA00;">&#125;</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>Dari kode diatas kita bisa melihat bahwa yang berubah-ubah posisinya hanya koordinat X, sedangkan koordinat Y tetap pada posisi 32px.</p>
+
+<p>Sekarang kita atur posisi gambar ketika di-hover atau ditelusuri dengan tab:</p>
+
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="line_numbers">
+        <pre>39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+</pre>
+      </td>
+      
+      <td class="code">
+        <pre class="css" style="font-family:monospace;">		<span style="color: #6666ff;">.twitshare</span><span style="color: #3333ff;">:hover</span><span style="color: #00AA00;">,</span><span style="color: #6666ff;">.twitshare</span><span style="color: #3333ff;">:focus</span><span style="color: #00AA00;">&#123;</span>
+			<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;"></span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+		<span style="color: #00AA00;">&#125;</span>
+		<span style="color: #6666ff;">.fbshare</span><span style="color: #3333ff;">:hover</span><span style="color: #00AA00;">,</span><span style="color: #6666ff;">.fbshare</span><span style="color: #3333ff;">:focus</span><span style="color: #00AA00;">&#123;</span>
+			<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">156px</span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+		<span style="color: #00AA00;">&#125;</span>
+		<span style="color: #6666ff;">.delishare</span><span style="color: #3333ff;">:hover</span><span style="color: #00AA00;">,</span><span style="color: #6666ff;">.delishare</span><span style="color: #3333ff;">:focus</span><span style="color: #00AA00;">&#123;</span>
+			<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">125px</span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+		<span style="color: #00AA00;">&#125;</span>
+		<span style="color: #6666ff;">.diggshare</span><span style="color: #3333ff;">:hover</span><span style="color: #00AA00;">,</span><span style="color: #6666ff;">.diggshare</span><span style="color: #3333ff;">:focus</span><span style="color: #00AA00;">&#123;</span>
+			<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">94px</span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+		<span style="color: #00AA00;">&#125;</span>
+		<span style="color: #6666ff;">.tumblrshare</span><span style="color: #3333ff;">:hover</span><span style="color: #00AA00;">,</span><span style="color: #6666ff;">.tumblrshare</span><span style="color: #3333ff;">:focus</span><span style="color: #00AA00;">&#123;</span>
+			<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">63px</span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+		<span style="color: #00AA00;">&#125;</span>
+		<span style="color: #6666ff;">.stumbleshare</span><span style="color: #3333ff;">:hover</span><span style="color: #00AA00;">,</span><span style="color: #6666ff;">.stumbleshare</span><span style="color: #3333ff;">:focus</span><span style="color: #00AA00;">&#123;</span>
+			<span style="color: #000000; font-weight: bold;">background-position</span><span style="color: #00AA00;">:</span><span style="color: #933;">32px</span> <span style="color: #cc66cc;"></span><span style="color: #00AA00;">;</span>
+		<span style="color: #00AA00;">&#125;</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>Dari kode di atas dapat kita lihat bahwa koordinat Y bergeser kembali ke posisi 0.</p>
+
+<p>Sekarang coba lakukan tes di peramban, tampilannya seharusnya akan seperti ini:</p>
+
+<p><img src="http://i0.wp.com/cekerholic.com/wp-content/uploads/2010/10/share2.jpg?fit=374%2C221" alt="Hasil CSS Sprite" class="aligncenter size-full wp-image-509" data-recalc-dims="1" /></p>
+
+<h3 id="hasil-akhir">Hasil Akhir</h3>
+
+<p>Inilah hasil akhir dari tutorial ini, sebuah sosial media sharing menu dengan efek Rollover, silakan klik gambar untuk melihat <a href="http://cekerholic.com/demo/share-button/">live-demo</a>-nya</p>
+
+<p><a href="http://cekerholic.com/demo/share-button/"><img src="http://i2.wp.com/cekerholic.com/wp-content/uploads/2010/10/share-final.jpg?fit=451%2C161" alt="Share Button Final" class="aligncenter size-full wp-image-473" data-recalc-dims="1" /></a></p>
+
+<h3 id="download-file-tutorial">Download File Tutorial</h3>
+
+<p>Silakan download file hasil tutorial dengan meng-klik tombol berikut:</p>
+
+<p style="display:block;margin:30px auto;text-align:center">
+  <a href="http://cekerholic.com/wp-content/plugins/download-monitor/download.php?id=8" style="background:#BF6409;color:#fff;font:700 1.75em Arial,Sans-Serif;padding:8px 14px 7px;border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.6);-moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.6);-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.6);width:auto;">DOWNLOAD</a>
+</p>
+
+</div>
+</article>
+<aside id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'cekerholic'; // required: replace example with your forum shortname
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</aside>
+<div class="navigation">
+<p>
+<span>Tulisan sebelumnya:</span>
+<a href="/archives/2010/11/serba-baru.html" rel="prev">Serba Baru di Bulan Baru</a>
+</p>
+<p>
+<span>Tulisan selanjutnya:</span>
+<a href="/archives/2010/11/wordpress-tips-modifikasi-widget-tag-cloud.html" rel="next">WordPress Tips: Modifikasi Widget Tag Cloud</a>
+</p>
+</div>
+</div>
+<p class="colophon">
+&copy; 2013 Aris FM. Proudly powered by
+<a href="http://middlemanapp.com/">Middleman</a>
+&amp;
+<a href="https://github.com/">Github</a>
+</p>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8548592-4']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'cekerholic'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+
+</div>
+</body>
+</html>

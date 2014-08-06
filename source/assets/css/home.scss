@@ -1,0 +1,261 @@
+/*!
+ * Jurnal Aris FM v1.1 by @Aris_FM http://about.me/cekerholic
+ * Copyright 2013 Aris FM
+ * Licensed under http://opensource.org/licenses/MIT
+ *
+ */
+
+
+// Be a normal guy
+// ***********************************
+@import "reset";
+@import "scut";
+
+// Summon The Mighty Compass
+@import "compass";
+
+
+
+
+
+// Begin Content
+// ***********************************
+@import "_home/base";
+@import "_home/animation";
+@import "_home/owl";
+
+.loading {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.preloader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top: 0;
+
+  > div {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.section {
+  display: none;
+}
+
+.jumbotron {
+  @include w;
+  @include background-image(linear-gradient(left top, #e73c34, #e77c34) );
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  z-index: -1;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  h1 {
+    font-family: "Montserrat";
+    font-size: 60px;
+    text-transform: uppercase;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  h2 {
+    @include sans;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-transform: none;
+    -webkit-animation-name: swing;
+    animation-name: swing;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+}
+
+.jumbotron-content {
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  background-color: #f2f2f2;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  dl {
+    @extend .clearfix;
+    dt, dd {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+    dt {
+      float: left;
+      width: 30%;
+      font-weight: bold;
+    }
+    dd {
+      border-bottom: 1px solid #ccc;
+      margin-left: 35%;
+    }
+
+    a {
+      color: #e73c34;
+      text-decoration: none;
+      -webkit-transition: all 0.25s;
+      -moz-transition: all 0.25s;
+      transition: all 0.25s;
+
+      &:hover {
+        color: #e77c34;
+      }
+    }
+  }
+}
+
+.half {
+  float: left;
+  width: 50%;
+
+  &.left {
+    padding-right: 40px;
+  }
+
+  &.right {
+    padding-left: 40px;
+  }
+}
+
+.container {
+  padding: 0 1em;
+  position: relative;
+
+  @include respond( pem(768) ) {
+    width: pem(960);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+.resume {
+  background-color: #fff;
+  padding: 60px 0;
+
+  > h2 {
+    text-align: center;
+  }
+}
+
+.experience {
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    @include sans;
+    font-size: 24px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-bottom: .5em;
+
+    &.small {
+      font-size: .85em;
+      color: lighten($black, 30%)
+    }
+  }
+}
+
+.footer {
+  background: image-url("me-nglanggeran.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    @include background-image(linear-gradient(left, rgba($b, .5), rgba(#e73c34, .5)) );
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+}
+
+.portfolio {
+  padding: 60px 0;
+
+  > h2 {
+    text-align: center;
+    color: $w;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.portfolio-single {
+  position: relative;
+}
+
+.portfolio-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba($b, .9);
+  padding: 20px;
+  text-align: center;
+
+  a {
+    color: $w;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+.owl-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.owl-page {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 0 5px;
+  border: 2px solid $w;
+
+  &.active {
+    background-color: $w;
+  }
+}

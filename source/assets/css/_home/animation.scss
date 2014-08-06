@@ -1,0 +1,191 @@
+.clock{
+  border-radius: 60px;
+  border: 3px solid #fff;
+  height: 80px;
+  width: 80px;
+  position: relative;
+
+  top: 28%;
+  top: -webkit-calc(50% - 43px);
+  top: calc(50% - 43px);
+}
+.clock:after{
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  top:2px;
+  left: 48%;
+  height: 38px;
+  width: 4px;
+  border-radius: 5px;
+  -webkit-transform-origin: 50% 97%;
+      transform-origin: 50% 97%;
+  -webkit-animation: clockA 2s linear infinite;
+      animation: clockA 2s linear infinite;
+}
+
+@-webkit-keyframes clockA{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes clockA{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+.clock:before{
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  top:6px;
+  left: 48%;
+  height: 35px;
+  width: 4px;
+  border-radius: 5px;
+  -webkit-transform-origin: 50% 94%;
+      transform-origin: 50% 94%;
+  -webkit-animation: clockB 12s linear infinite;
+      animation: clockB 12s linear infinite;
+}
+
+@-webkit-keyframes clockB{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes clockB{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+// Directly taken from here; http://daneden.github.io/animate.css/
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate(9deg);
+    transform: rotate(9deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-6deg);
+    transform: rotate(-6deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate(9deg);
+    -ms-transform: rotate(9deg);
+    transform: rotate(9deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-6deg);
+    -ms-transform: rotate(-6deg);
+    transform: rotate(-6deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes moveUp {
+  50% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes moveUp {
+  50% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+

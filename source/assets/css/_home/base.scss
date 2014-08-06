@@ -1,9 +1,5 @@
-// Summon The Mighty Compass
-@import "compass";
-
-
 // Typography
-%sans         { font-family: "Source Sans Pro", sans-serif; }
+%sans         { font-family: "Open Sans", sans-serif; }
 %serif        { font-family: "PT Serif", Georgia, serif; }
 @mixin sans   { @extend %sans; }
 @mixin serif  { @extend %serif; }
@@ -43,4 +39,34 @@ $b:     #000; // Now this is pure black, used for RGBA only though
     display: table;
     clear: both;
   }
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+body {
+  @include sans;
+  @include black;
+  background-color: #e73c34;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+#{headings(all)} {
+  font-family: "Montserrat";
+}
+
+h2 {
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
 }

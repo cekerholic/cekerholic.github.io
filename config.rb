@@ -18,6 +18,7 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", :layout => false
+activate :livereload
 
 # Resource
 set :css_dir, 'assets/css'

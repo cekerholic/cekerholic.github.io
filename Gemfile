@@ -5,6 +5,7 @@ gem "middleman-blog", "~> 3.2.0"
 gem "middleman-deploy"
 gem "nokogiri"
 gem 'sprockets-media_query_combiner'
+gem "middleman-livereload", "~> 3.1.0"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0.0"

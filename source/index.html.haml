@@ -1,22 +1,90 @@
 ---
 title: Home
-pageable: true
-per_page: 5
-layout: index_layout
+layout: new_home
 ---
 
-- page_articles.each_with_index do |article|
-  %article 
-    .container
-      %h2.post-title= link_to article.title, article
-      %p.post-meta
-        %time{datetime: article.date.strftime('%Y-%m-%d')}= article.date.strftime('%e %B %Y')
-        %a{href: article.url+"#disqus_thread"} Comments
-      .entry-content= article.summary(250)
 
-.site-pagination.container
-  - if paginate
-    - if prev_page
-      %p.pagination.prev= link_to '&larr; Halaman sebelumnya', prev_page
-    - if next_page
-      %p.pagination.next= link_to 'Halaman selanjutnya &rarr;', next_page
+.preloader
+  .clock
+
+.jumbotron.section
+  .jumbotron-content
+    %h1 Aris Faria Muhammadun
+    %h2 Front-end developer, full-time dreamer 
+
+.content.section
+  .container.clearfix
+    .half.left
+      %h2 About me
+      %p 6 years of experiences in web design & development. Starting as freelance Wordpress developer, then decided to switch to web design & front-end engineering, with the last 3 years focused exclusively in front-end development.
+      %p Specialized in front-end development tool (Middleman, HTML/HAML, CSS/SASS, jQuery) and Adobe Photoshop. Still learning a lot of things like javascript, git, ruby etc.
+      %ul 
+        %li Web standards, performance optimization, usability.
+        %li Wireframing & interface design.
+        %li Mobile optimization (responsive design).
+    .half.right
+      %h2 Personal Info
+      %dl 
+        %dt Skype
+        %dd Cekerholic
+        %dt Email
+        %dd= link_to "arisfm@live.com", "mailto:arisfm@live.com"
+        %dt Github
+        %dd= link_to "github.com/cekerholic", "https://github.com/cekerholic"
+        %dt Twitter
+        %dd= link_to "@Aris_FM", "https://twitter.com/Aris_FM"
+        %dt Linkedin
+        %dd= link_to "id.linkedin.com/in/cekerholic", "http://id.linkedin.com/in/cekerholic/"
+        %dt Address
+        %dd Ketaron 003/008, Tamanagung, Muntilan, Indonesia, 56413
+
+.resume.section
+  %h2 Experiences
+  .container
+    .experience.clearfix
+      .half 
+        %p Lead Front-End Developer
+        %h3 SunnyDay Creative
+      .half
+        %p.small July 2013 - Present 
+        %p SunnyDay is a digital creative agency, we build unique digital experiences guided by a madly love for craftsmanship and passion for technology.
+    .experience.clearfix
+      .half 
+        %p Front-End Developer
+        %h3 Harnods
+      .half
+        %p.small April 2013 - July 2013
+        %p Harnods is a premium digital architect based in Jakarta, Indonesia - specialising in producing clean, simple and accessible websites, with particular expertise in the User Interface.
+    .experience.clearfix
+      .half 
+        %p Front-End Developer & Web Designer
+        %h3 Tokokoo
+      .half
+        %p.small October 2011 - December 2012
+        %p Tokokoo is a Premium WordPress ecommerce themes Studio from Indonesia
+    .experience.clearfix
+      .half 
+        %p Front-End Developer & Web Designer
+        %h3 Freelance
+      .half
+        %p.small May 2009 - September 2011
+        %p This is where my journey began. After spent almost a year learning, I decided to choose web development as my career.
+
+
+.portfolio.section
+  %h2 Portfolio
+  .container
+    .item-wrapper
+      .portfolio-single
+        = image_tag "portfolio/porto-slidemodel.jpg"
+        .portfolio-description= link_to "Slide Model", "http://slidemodel.com/"
+      .portfolio-single
+        = image_tag "portfolio/porto-goinsta.jpg"
+        .portfolio-description= link_to "GoInsta", "http://goinsta.net/"
+      .portfolio-single
+        = image_tag "portfolio/porto-bengkelin.jpg"
+        .portfolio-description= link_to "Bengkelin", "http://bengkelin.com/"
+      .portfolio-single
+        = image_tag "portfolio/porto-kumba.jpg"
+        .portfolio-description= link_to "Kumbaplay", "http://obscure-scrubland-5171.herokuapp.com/"
+.footer.section 

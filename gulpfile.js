@@ -1,0 +1,93 @@
+// Gulp plugins
+var bower         = require('main-bower-files'),
+    browserSync   = require('browser-sync'),
+    filter        = require('gulp-filter'),
+    gulp          = require('gulp'),
+    jade          = require('gulp-jade'),
+    mqpacker      = require('css-mqpacker'),
+    path          = require('path'),
+    plumber       = require('gulp-plumber'),
+    rename        = require('gulp-rename'),
+    sass          = require('gulp-compass');
+
+// Source Files
+var src = {
+  jade: './src/**/*.jade',
+  sass: './src/s/sass/**/*.scss',
+  js: './src/s/js/**/*.js'
+}
+
+// Build Dest
+var dest = {
+  build: './neo/',
+  statics: './neo/s/'
+}
+
+// Gulp plumber error handler
+var onError = function(err) {
+  console.log(err);
+  this.emit('end');
+}
+
+// Web server
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: './'
+    }
+  });
+});
+
+gulp.task('bower', function() {
+  return gulp.src(bower)
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(filter('**/*.js'))
+    .pipe(gulp.dest(dest.statics));
+});
+
+gulp.task('bower-css', function() {
+  return gulp.src(bower)
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(filter('**/*.css'))
+    .pipe(rename({
+      prefix: '_',
+      extname: '.scss'
+    }))
+    .pipe(gulp.dest('./src/s/sass/vendor'));
+});
+
+gulp.task('html', function() {
+  return gulp.src(src.jade)
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(jade())
+    .pipe(gulp.dest(dest.build))
+    .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task('css', ['bower-css'], function() {
+  return gulp.src(src.sass)
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(compass({
+      project: path.join(__dirname, 'src/s'),
+      sass: 'sass',
+      style: 'expanded'
+    }))
+    .pipe(mqpacker())
+    .pipe(gulp.dest(dest.statics))
+    .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task('js', function() {
+  return gulp.src(src.js)
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(gulp.dest(dest.statics))
+    .pipe(browserSync.reload({stream:true}));
+});
+
+// Default task (watch)
+gulp.task('default', ['bower', 'html', 'css', 'js', 'browser-sync'], function() {
+  gulp.watch(dest.statics, ['bower']);
+  gulp.watch(src.jade, ['html']);
+  gulp.watch(src.sass, ['css']);
+  gulp.watch(src.sass, ['js']);
+});

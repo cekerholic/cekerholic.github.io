@@ -39,14 +39,14 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('bower', function() {
-  return gulp.src(bower)
+  return gulp.src(bower())
     .pipe(plumber({ errorHandler: onError }))
     .pipe(filter('**/*.js'))
     .pipe(gulp.dest(dest.statics));
 });
 
 gulp.task('bower-css', function() {
-  return gulp.src(bower)
+  return gulp.src(bower())
     .pipe(plumber({ errorHandler: onError }))
     .pipe(filter('**/*.css'))
     .pipe(rename({

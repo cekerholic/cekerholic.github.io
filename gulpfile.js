@@ -3,6 +3,7 @@ var bower         = require('main-bower-files'),
     browserSync   = require('browser-sync'),
     filter        = require('gulp-filter'),
     gulp          = require('gulp'),
+    gulpIf        = require('gulp-if'),
     jade          = require('gulp-jade'),
     mqpacker      = require('css-mqpacker'),
     path          = require('path'),
@@ -45,14 +46,22 @@ gulp.task('bower', function() {
     .pipe(gulp.dest(dest.statics));
 });
 
+// Gulp if
+var condition = function(getcss) {
+  filter('**/*.css');
+  return true;
+}
+
 gulp.task('bower-css', function() {
   return gulp.src(bower())
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(filter('**/*.css'))
-    .pipe(rename({
-      prefix: '_',
-      extname: '.scss'
-    }))
+    .pipe(gulpIf(
+      condition,
+      rename({
+        extname: '.scss'
+      }),
+      filter('**/*.scss')
+    ))
     .pipe(gulp.dest('./src/s/sass/vendor'));
 });
 
@@ -64,7 +73,7 @@ gulp.task('html', function() {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('css', ['bower-css'], function() {
+gulp.task('css', function() {
   return gulp.src(src.sass)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(compass({
@@ -85,8 +94,7 @@ gulp.task('js', function() {
 });
 
 // Default task (watch)
-gulp.task('default', ['bower', 'html', 'css', 'js', 'browser-sync'], function() {
-  gulp.watch(dest.statics, ['bower']);
+gulp.task('default', ['html', 'css', 'js', 'browser-sync'], function() {
   gulp.watch(src.jade, ['html']);
   gulp.watch(src.sass, ['css']);
   gulp.watch(src.sass, ['js']);

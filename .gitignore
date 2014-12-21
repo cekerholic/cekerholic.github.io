@@ -2,3 +2,5 @@
 /node_modules
 /*.sublime-project
 /*.sublime-workspace
+/src/s/css/
+/src/s/.sass-cache/

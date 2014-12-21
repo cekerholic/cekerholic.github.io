@@ -1,0 +1,96 @@
+/*  ************************** <<< || >>> **************************** *\
+    ==================================================================
+
+      name:           cekerholic.com
+      version:        2.0.0-alpha
+      codename:       neo
+      description:    Personal blog of @Aris_FM
+      date created:   Fri, Dec 19th 2014
+      date modified:  Fri, Dec 19th 2014
+
+    ==================================================================
+\*  ************************** <<< || >>> **************************** */
+
+/**
+  *
+  *
+  *
+  *
+*/
+
+//
+  // Table of Content:
+  // 1.  Dependencies
+  //     a. Compass
+  //     b. Normalize
+  //     c. Scut
+  // 2.  Helpers (variables, mixins & placeholders)
+  //     a. Variable
+  //     b. Functions
+  //     c. Mixins Typography
+  //     d. Mixins Media Query
+  //     e. Placeholders
+  // 3.  Global Styles
+  //     a. Typography
+  //     b. Scaffolding
+  //     c. Global classes
+  // 4.  UI Comps
+  //     a. Navigation
+  //     b. Post-view
+//
+
+//  1. Dependencies
+//  ==================================================================
+    // a. Compass
+    @import "compass";
+
+    // b. Normalize
+    @import "vendor/normalize";
+
+    // c. Scut
+    @import "vendor/scut";
+
+
+
+//  2. Helpers
+//  ==================================================================
+    // a. SASS Variables
+    @import "helpers/helpers.vars";
+
+    // b. SASS Functions
+    @import "helpers/helpers.functions";
+
+    // c. Typography
+    @import "helpers/helpers.typography";
+
+    // d. Media Queries
+    @import "helpers/helpers.media-query";
+
+    // e. Placeholders
+    @import "helpers/helpers.placeholders";
+
+
+
+//  3. Global Styles
+//  ==================================================================
+    // a. Typography
+    @import "global/global.typography";
+
+    // b. Scaffolding
+    @import "global/global.scaffolding";
+
+    // c. Global Classes
+    @import "global/global.classes";
+
+    // d. Grid System
+    @import "global/global.grid";
+
+
+
+//  4. UI Comps
+//  ==================================================================
+    // a. Navigation
+    @import "comps/navigations";
+
+
+

@@ -1,6 +1,7 @@
 // Gulp plugins
 var bower         = require('main-bower-files'),
     browserSync   = require('browser-sync'),
+    compass       = require('gulp-compass'),
     filter        = require('gulp-filter'),
     gulp          = require('gulp'),
     gulpIf        = require('gulp-if'),
@@ -8,6 +9,7 @@ var bower         = require('main-bower-files'),
     mqpacker      = require('css-mqpacker'),
     path          = require('path'),
     plumber       = require('gulp-plumber'),
+    postcss       = require('gulp-postcss'),
     rename        = require('gulp-rename'),
     sass          = require('gulp-compass');
 
@@ -81,7 +83,9 @@ gulp.task('css', function() {
       sass: 'sass',
       style: 'expanded'
     }))
-    .pipe(mqpacker())
+    .pipe(postcss([
+      mqpacker
+    ]))
     .pipe(gulp.dest(dest.statics))
     .pipe(browserSync.reload({stream:true}));
 });

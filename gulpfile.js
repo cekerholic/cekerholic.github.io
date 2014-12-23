@@ -36,7 +36,7 @@ var onError = function(err) {
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-      baseDir: './'
+      baseDir: './neo'
     }
   });
 });

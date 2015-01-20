@@ -1,3 +1,3 @@
 # cekerholic.com
 
-cekerholic.com adalah blog pribadi saya, @cekerholic.
+cekerholic.com adalah resume saya.

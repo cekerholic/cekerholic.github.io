@@ -22,8 +22,8 @@ var src = {
 
 // Build Dest
 var dest = {
-  build: './neo/',
-  statics: './neo/s/'
+  build: './',
+  statics: './s/'
 }
 
 // Gulp plumber error handler
@@ -36,7 +36,7 @@ var onError = function(err) {
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-      baseDir: './neo'
+      baseDir: './'
     }
   });
 });

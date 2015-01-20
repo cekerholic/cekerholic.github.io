@@ -17,7 +17,8 @@ var bower         = require('main-bower-files'),
 var src = {
   jade: './src/**/*.jade',
   sass: './src/s/sass/**/*.scss',
-  js: './src/s/js/**/*.js'
+  js: './src/s/js/**/*.js',
+  img: './src/s/img/**/*'
 }
 
 // Build Dest
@@ -96,6 +97,16 @@ gulp.task('js', function() {
     .pipe(gulp.dest(dest.statics))
     .pipe(browserSync.reload({stream:true}));
 });
+
+gulp.task('images', ['css'], function() {
+  return gulp.src(src.img)
+    .pipe(plumber({
+      errorHandler: onError
+    }))
+    .pipe(gulp.dest(dest.statics))
+    .pipe(browserSync.reload({stream:true}));
+});
+
 
 // Default task (watch)
 gulp.task('default', ['html', 'css', 'js', 'browser-sync'], function() {

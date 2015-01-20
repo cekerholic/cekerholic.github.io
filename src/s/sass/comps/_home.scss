@@ -1,0 +1,32 @@
+.home {
+  margin: pem(20) auto;
+  max-width: pem(600);
+  text-align: center;
+
+  @include respond(phablet) {
+    margin: pem(100) auto;
+  }
+}
+
+.branding {
+  @include use-sprite("logo");
+  @include scut-image-replace();
+}
+
+.bio__name {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  &:before {
+    content: "Aris FM";
+
+    @include respond(phablet) {
+      content: "Aris Faria Muhammadun";
+    }
+  }
+}
+
+.bio__social {
+  display: inline-block;
+  margin-top: -10px;
+}

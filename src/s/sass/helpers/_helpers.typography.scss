@@ -1,7 +1,9 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400italic,300,300italic,400");
+
 // VARIABLES
 //  ==================================================================
 // Default font-stack
-$sans:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans:      "Roboto", Helvetica, Arial, sans-serif;
 $serif:     Cambria, Georgia, serif;
 $mono:      Consolas, "Lucida Console", "Courier New", Courier, monospace;
 
@@ -15,12 +17,12 @@ $base-line-height:      24;
 
 // Headings font
 $font-size-h1:          36;
-$leading-h1:            2;
-$font-size-h2:          30;
-$leading-h2:            1.5;
-$font-size-h3:          24;
+$leading-h1:            1;
+$font-size-h2:          24;
+$leading-h2:            1;
+$font-size-h3:          18;
 $leading-h3:            1.25;
-$font-size-h4:          20;
+$font-size-h4:          26;
 $leading-h4:            1.25;
 
 // Blockquote
@@ -89,12 +91,3 @@ $font-size-blockquote:  18;
     }
   }
 }
-
-
-
-// @FONT-FACE IMPORT
-//  ==================================================================
-@include font-face("Roboto", "Roboto-Regular");
-@include font-face("Roboto", "Roboto-Italic", italic);
-@include font-face("Roboto", "Roboto-Bold", normal, bold);
-@include font-face("Roboto", "Roboto-BoldItalic", italic, bold);

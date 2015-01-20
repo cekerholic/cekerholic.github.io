@@ -69,6 +69,9 @@
     // e. Placeholders
     @import "helpers/helpers.placeholders";
 
+    // f. Sprites
+    @import "helpers/helpers.sprites";
+
 
 
 //  3. Global Styles
@@ -90,7 +93,7 @@
 //  4. UI Comps
 //  ==================================================================
     // a. Navigation
-    @import "comps/navigations";
+    @import "comps/home";
 
 
 

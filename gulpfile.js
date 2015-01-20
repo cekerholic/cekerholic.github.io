@@ -81,13 +81,15 @@ gulp.task('css', function() {
     .pipe(plumber({ errorHandler: onError }))
     .pipe(compass({
       project: path.join(__dirname, 'src/s'),
+      css: 'css',
       sass: 'sass',
+      image: 'img',
       style: 'expanded'
     }))
     .pipe(postcss([
       mqpacker
     ]))
-    .pipe(gulp.dest(dest.statics))
+    .pipe(gulp.dest(dest.statics+'css'))
     .pipe(browserSync.reload({stream:true}));
 });
 
@@ -103,14 +105,15 @@ gulp.task('images', ['css'], function() {
     .pipe(plumber({
       errorHandler: onError
     }))
-    .pipe(gulp.dest(dest.statics))
+    .pipe(gulp.dest(dest.statics+'img'))
     .pipe(browserSync.reload({stream:true}));
 });
 
 
 // Default task (watch)
-gulp.task('default', ['html', 'css', 'js', 'browser-sync'], function() {
+gulp.task('default', ['html', 'css', 'js', 'images', 'browser-sync'], function() {
   gulp.watch(src.jade, ['html']);
   gulp.watch(src.sass, ['css']);
-  gulp.watch(src.sass, ['js']);
+  gulp.watch(src.js, ['js']);
+  gulp.watch(src.img, ['images']);
 });

@@ -5,7 +5,7 @@
 // Body Text
 //  ==================================================================
 p {
-  margin-bottom: 0 0 pem($base-line-height / 2);
+  margin: 0 0 pem($base-line-height / 2);
 
   &:last-child { margin-bottom: 0; }
 }
@@ -24,6 +24,11 @@ small { font-size: 85%; }
 
 // Headings
 //  ==================================================================
+
+#{headings(all)} {
+  font-weight: 300;
+}
+
 .h1 {
   font-size: pem($font-size-h1);
   line-height: pem($base-line-height * $leading-h1);
@@ -43,12 +48,12 @@ small { font-size: 85%; }
 
 h1 {
   @extend .h1;
-  margin-top: pem($base-line-height / 2);
-  margin-bottom: pem($base-line-height / 2);
+  margin-top: pem($base-line-height / 3);
+  margin-bottom: pem($base-line-height / 4);
 }
 h2 {
   @extend .h2;
-  margin-top: pem($base-line-height / 2);
+  margin-top: pem($base-line-height / 3);
   margin-bottom: pem($base-line-height / 2);
 }
 h3 {
